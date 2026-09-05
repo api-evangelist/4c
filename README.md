@@ -64,5 +64,36 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-4C is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/4c_stock/
+**4C** — legally **4C Insights, Inc.** — was a Chicago-based marketing intelligence and
+advertising technology company founded in 2011 by Northwestern University professor Alok
+Choudhary. Its *Scope* "closed ecosystems platform" let brands, agencies and media companies
+discover cross-channel audience insights, plan and execute paid campaigns inside walled-garden
+environments (Facebook, Instagram, X/Twitter, Snapchat, LinkedIn, Pinterest, connected TV) and
+measure the results in one self-service tool, with data delivered out to third-party systems by
+API, email, SFTP or web query.
+
+**Status: defunct / absorbed.** Mediaocean announced its acquisition of 4C in July 2020 (reported
+at approximately $150 million) and folded the product into Flashtalking by Mediaocean; after
+Mediaocean's later combination with Innovid, the 4C social-advertising surface now sits inside
+Innovid's social ads management product.
+
+**There is no 4C API surface to enrich.** 4C consumed the advertising APIs of the closed
+ecosystems it served; it never published a developer program of its own. As probed on 2026-09-05:
+
+| Probe | Result |
+|---|---|
+| `https://4cinsights.com/` | no HTTPS listener — TLS connect to 443 times out (apex and `www`) |
+| `http://4cinsights.com/openapi.json` | `301` → `http://flashtalking.com/social` |
+| `http://4cinsights.com/.well-known/*` (11 paths) | `301` → `http://flashtalking.com/social` |
+| `http://4cinsights.com/apis.json`, `/apis.yml`, `/llms.txt` | `301` → `http://flashtalking.com/social` |
+| final destination of every redirect | `https://www.innovid.com/platform/social-ads-management` (`200`) |
+| `https://api.github.com/orgs/4cinsights` | `404` — no GitHub organization |
+| npm search `4cinsights` / `https://pypi.org/pypi/4cinsights/json` | 0 packages / `404` |
+
+The redirect target belongs to Innovid/Mediaocean, so nothing behind it is credited to 4C. This
+profile is retained as a historical record.
+
+**Sources**
+- Mediaocean acquisition announcement — https://www.mediaocean.com/4C-acquisition
+- 4C Insights on LinkedIn (part of Flashtalking by Mediaocean) — https://www.linkedin.com/company/4c-insights
+- Secondary-market listing this record was harvested from — https://forgeglobal.com/4c_stock/

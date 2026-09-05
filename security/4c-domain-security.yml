@@ -1,0 +1,58 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  dig + curl/openssl against 4cinsights.com, 4C Insights' own registrable domain, on
+  2026-09-05. probe-domain-security.py returned "no-hosts" because apis.yml carries no
+  Website/baseURL for a defunct company, so this file was probed by hand against the
+  domain the company itself used.
+note: >-
+  The domain survives the company. It resolves (AWS Route 53 nameservers, two A records)
+  and terminates on an AWS elastic load balancer that answers only on port 80 and 301s
+  every path to http://flashtalking.com/social. There is NO HTTPS listener at all — a TLS
+  connect to 443 times out on both the apex and www — which is unusual and is itself the
+  finding: the surviving redirect was never given a certificate. Mail is still live and
+  routed through Proofpoint, with SPF published (Google + Outlook + Pardot + SparkPost)
+  and no DMARC record. Infrastructure and mail routing both belong to the acquirer, not
+  to 4C.
+hosts:
+- host: 4cinsights.com
+  https: false
+  https_note: TLS connect to 443 times out; no HTTPS listener
+  http: true
+  http_status: 301
+  http_redirect_to: http://flashtalking.com/social
+  server: awselb/2.0
+  tls_version: null
+  hsts: false
+  hsts_max_age: null
+- host: www.4cinsights.com
+  https: false
+  https_note: TLS connect to 443 times out; no HTTPS listener
+  http: true
+  http_status: 301
+  http_redirect_to: http://flashtalking.com/social
+  tls_version: null
+  hsts: false
+  hsts_max_age: null
+domains:
+- domain: 4cinsights.com
+  dnssec: false
+  caa:
+  - trust-provider.com
+  - usertrust.com
+  - amazon.com
+  - amazonaws.com
+  - amazontrust.com
+  - awstrust.com
+  - comodoca.com
+  - digicert.com
+  - godaddy.com
+  - letsencrypt.org
+  - sectigo.com
+  spf: true
+  spf_record: 'v=spf1 include:_spf.google.com include:spf.protection.outlook.com include:aspmx.pardot.com include:sparkpostmail.com ~all'
+  dmarc: false
+  dmarc_policy: null
+  mx: true
+  mx_provider: pphosted.com (Proofpoint)
+  nameservers: awsdns (Route 53)
