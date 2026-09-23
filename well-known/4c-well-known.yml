@@ -1,16 +1,13 @@
 generated: '2026-09-05'
 method: probed
 source: https://4cinsights.com/ (4C Insights' own registrable domain)
-note: >-
-  No hits. 4cinsights.com no longer answers on HTTPS at all (TCP connect times out on
-  443 for both the apex and www); port 80 answers, and every path — including
-  /openapi.json, /apis.json and all eleven /.well-known/ paths below — returns an
-  identical HTTP 301 to http://flashtalking.com/social, which in turn lands on
-  https://www.innovid.com/platform/social-ads-management. This is a blanket
-  domain-level redirect installed by the acquirer, not a discovery surface. Because the
-  redirect target belongs to Innovid/Mediaocean and NOT to 4C, no document behind it is
-  recorded here and NO WellKnown or SecurityTxt pointer is emitted — a 301 into another
-  company's site is an absence, not a served document.
+note: No hits. 4cinsights.com no longer answers on HTTPS at all (TCP connect times out on 443 for both
+  the apex and www); port 80 answers, and every path — including /openapi.json, /apis.json and all eleven
+  /.well-known/ paths below — returns an identical HTTP 301 to http://flashtalking.com/social, which in
+  turn lands on https://www.innovid.com/platform/social-ads-management. This is a blanket domain-level
+  redirect installed by the acquirer, not a discovery surface. Because the redirect target belongs to
+  Innovid/Mediaocean and NOT to 4C, no document behind it is recorded here and NO WellKnown or SecurityTxt
+  pointer is emitted — a 301 into another company's site is an absence, not a served document.
 hit_count: 0
 hosts:
 - host: https://4cinsights.com
@@ -39,22 +36,6 @@ hosts:
     status: 0
   - path: /.well-known/agent.json
     status: 0
-- host: https://www.4cinsights.com
-  reachable: false
-  transport_note: TLS connect to 443 times out; no HTTPS listener
-  documents:
-  - path: /.well-known/security.txt
-    status: 0
-  - path: /.well-known/apis.json
-    status: 0
-  - path: /apis.json
-    status: 0
-- host: http://4cinsights.com
-  reachable: true
-  transport_note: >-
-    Port 80 answers, but every path returns 301 -> http://flashtalking.com/social
-    (acquirer redirect). No document is served from this host.
-  documents:
   - path: /.well-known/security.txt
     status: 301
     redirect_to: http://flashtalking.com/social
@@ -97,3 +78,13 @@ hosts:
   - path: /llms.txt
     status: 301
     redirect_to: http://flashtalking.com/social
+- host: https://www.4cinsights.com
+  reachable: false
+  transport_note: TLS connect to 443 times out; no HTTPS listener
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+  - path: /.well-known/apis.json
+    status: 0
+  - path: /apis.json
+    status: 0
