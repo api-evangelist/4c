@@ -64,36 +64,38 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-**4C** — legally **4C Insights, Inc.** — was a Chicago-based marketing intelligence and
-advertising technology company founded in 2011 by Northwestern University professor Alok
-Choudhary. Its *Scope* "closed ecosystems platform" let brands, agencies and media companies
-discover cross-channel audience insights, plan and execute paid campaigns inside walled-garden
-environments (Facebook, Instagram, X/Twitter, Snapchat, LinkedIn, Pinterest, connected TV) and
-measure the results in one self-service tool, with data delivered out to third-party systems by
-API, email, SFTP or web query.
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
 
-**Status: defunct / absorbed.** Mediaocean announced its acquisition of 4C in July 2020 (reported
-at approximately $150 million) and folded the product into Flashtalking by Mediaocean; after
-Mediaocean's later combination with Innovid, the 4C social-advertising surface now sits inside
-Innovid's social ads management product.
+4C — legally 4C Insights, Inc. — was a Chicago-based marketing intelligence and advertising technology company founded in 2011 by Northwestern University professor Alok Choudhary, building on his research into large-scale data mining and social signal. Its Scope "closed ecosystems platform" let brands, agencies and media companies discover cross-channel audience insights, plan and execute paid campaigns inside walled-garden environments — Facebook, Instagram, X/Twitter, Snapchat, LinkedIn, Pinterest and connected TV — and measure the results in one self-service tool, with data delivery out to third-party systems by API, email, SFTP or web query. The company raised roughly $26 million through a Series C, grew to about 160 people and ran offices in Chicago, New York, Seattle and Singapore. Mediaocean announced its acquisition of 4C in July 2020 (reported at approximately $150 million) and folded the product into Flashtalking by Mediaocean; after Mediaocean's later combination with Innovid, the 4C social-advertising surface now lives inside Innovid's social ads management product. 4C never operated a public developer program: it consumed the advertising APIs of the closed ecosystems it served rather than publishing one of its own, and today the 4cinsights.com domain serves no HTTPS listener and blanket-301s every path to the acquirer's site. This profile is retained as a historical record; there is no 4C API surface to enrich.
 
-**There is no 4C API surface to enrich.** 4C consumed the advertising APIs of the closed
-ecosystems it served; it never published a developer program of its own. As probed on 2026-09-05:
+**Areas:** Company · Defunct · Acquired · Advertising · Marketing · Analytics · Social Media · Television · Audience Intelligence · AdTech
 
-| Probe | Result |
-|---|---|
-| `https://4cinsights.com/` | no HTTPS listener — TLS connect to 443 times out (apex and `www`) |
-| `http://4cinsights.com/openapi.json` | `301` → `http://flashtalking.com/social` |
-| `http://4cinsights.com/.well-known/*` (11 paths) | `301` → `http://flashtalking.com/social` |
-| `http://4cinsights.com/apis.json`, `/apis.yml`, `/llms.txt` | `301` → `http://flashtalking.com/social` |
-| final destination of every redirect | `https://www.innovid.com/platform/social-ads-management` (`200`) |
-| `https://api.github.com/orgs/4cinsights` | `404` — no GitHub organization |
-| npm search `4cinsights` / `https://pypi.org/pypi/4cinsights/json` | 0 packages / `404` |
+## 4C on APIs.io (historical record)
 
-The redirect target belongs to Innovid/Mediaocean, so nothing behind it is credited to 4C. This
-profile is retained as a historical record.
+Everything profiled for 4C is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/4c/](https://apis.io/providers/4c/)** — or go straight to one of the APIs or properties below.
 
-**Sources**
-- Mediaocean acquisition announcement — https://www.mediaocean.com/4C-acquisition
-- 4C Insights on LinkedIn (part of Flashtalking by Mediaocean) — https://www.linkedin.com/company/4c-insights
-- Secondary-market listing this record was harvested from — https://forgeglobal.com/4c_stock/
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [4C Domain Security](https://apis.io/security/4c/4c-domain-security/)
+
+## API Evangelist rating
+
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for 4C: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/4c/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
